@@ -15,6 +15,7 @@ public class Relacionamento {
 	        
 	        System.out.println(DadosLutadores.arrayLutadores[0].statusLutador.getDerrotas());
 	        System.out.println(DadosLutadores.arrayLutadores[0].getAltura());
+	        System.out.println("Fazendo alteração no codigo");
 	        
 	}
 }
