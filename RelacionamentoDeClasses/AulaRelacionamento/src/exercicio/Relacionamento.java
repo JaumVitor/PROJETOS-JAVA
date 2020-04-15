@@ -14,6 +14,8 @@ public class Relacionamento {
 //			  									new Lutadores.StatusLutador(5,1,3));
 	        
 	        System.out.println(DadosLutadores.arrayLutadores[0].statusLutador.getDerrotas());
+	        System.out.println(DadosLutadores.arrayLutadores[0].getAltura());
+	        
 	}
 }
 
