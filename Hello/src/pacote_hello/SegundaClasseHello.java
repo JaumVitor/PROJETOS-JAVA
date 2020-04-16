@@ -9,6 +9,6 @@ public class SegundaClasseHello {
 	}
 	
 	public void getNum () {
-		System.out.printf ("O numero é: %d", this.num); 
+		System.out.printf ("O numero é --> %d", this.num); 
 	}
 }
