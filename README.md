@@ -1,5 +1,3 @@
 # PROJETOS-JAVA
-> Repositório que armazena exercicios.
-> Feitos em casa
-> Feitos em sala de aula
+> Repositório que armazena exercicios cujo foram feitos em casa e sala de aula
 
