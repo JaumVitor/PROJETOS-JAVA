@@ -1,6 +1,6 @@
 package aulas_curso_aluno;
 
-import java.lang.*; 
+//import java.lang.*; 
 
 public class Aula15_unixTime {
     public static void main (String[] args){
