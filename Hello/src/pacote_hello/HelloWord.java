@@ -7,6 +7,9 @@ public class HelloWord {
      
      SegundaClasseHello valor = new SegundaClasseHello (1); 
      valor.getNum();
+     
+     System.out.println("Fazendo alterção de teste, dentro do eclipse");
+     
     }
 }
 	     
