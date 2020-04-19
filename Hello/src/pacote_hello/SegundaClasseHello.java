@@ -2,7 +2,6 @@ package pacote_hello;
 
 public class SegundaClasseHello {
 	private int num;
-	private int add; 
 	
 	//Contrutor da classe
 	public SegundaClasseHello(int num){

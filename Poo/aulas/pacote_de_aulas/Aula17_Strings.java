@@ -13,5 +13,6 @@ public class Aula17_Strings {
 		idade = input.nextInt(); 
 		
 		System.out.printf("Meu nome é %s e tenho %d anos", nome, idade );
+		//Fazendo alteração de teste no meu projeto
 	}
 }
