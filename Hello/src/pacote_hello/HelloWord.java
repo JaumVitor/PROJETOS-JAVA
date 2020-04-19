@@ -9,7 +9,6 @@ public class HelloWord {
      valor.getNum();
      
      System.out.println("Fazendo alterção de teste, dentro do eclipse");
-     
     }
 }
 	     
