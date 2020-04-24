@@ -60,9 +60,9 @@ public class Lutadores {
         
         //METODOS -------<<<<<<<>>>>>
         public static Lutadores cadastrarLutador (String nome, String nacionalidade, int idade, double altura, 
-		  				   double peso, char categoria, StatusLutador statusLutador) {
+		  				   double peso, StatusLutador statusLutador) {
 	     //Criando cadastro do lutador, e retornando pro local de chamamento.....(Retorno vai pro arrayLutadores):
-	     Lutadores dados = new Lutadores (nome, nacionalidade, idade, altura, peso, categoria, statusLutador);
+	     Lutadores dados = new Lutadores (nome, nacionalidade, idade, altura, peso, statusLutador);
 	     return dados; 
         }
         
@@ -96,7 +96,7 @@ public class Lutadores {
         }
         
         //Contrutor da classe Lutadores
-        public Lutadores (String nome, String nacionalidade, int idade, double altura, double peso, char categoria, StatusLutador statusLutador ) {
+        public Lutadores (String nome, String nacionalidade, int idade, double altura, double peso, StatusLutador statusLutador ) {
         	this.nome = nome;
         	this.nacionalidade = nacionalidade; 
         	this.idade = idade; 
