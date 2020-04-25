@@ -24,6 +24,12 @@ public class Combate {
 		}
 	}
 	
+	public void teste(Lutadores l1, Lutadores l2) {
+		if (l1.equals(l2) == false) {
+			System.out.println("Lutadores diferentes");
+		}
+	}
+	
 	public void lutar () {
 		if (statusLuta) {
 			System.out.printf("LUTANDO!, %s x %s", this.lutador1.getNome(), this.lutador2.getNome());
