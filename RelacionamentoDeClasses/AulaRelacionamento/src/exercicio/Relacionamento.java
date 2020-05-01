@@ -1,31 +1,18 @@
 package exercicio;
 
-import exercicio.Lutadores.DadosLutadores;
-import exercicio.Lutadores.StatusLutador;
-/*Essas importcoes nao sao necessarias, caso eu queira retira-las preciso mudar a forma de instanciamento*/
-
 public class Relacionamento {
 	public static void main (String[] args) {
-	        //Declarando usnado as importacoes: 
-	        DadosLutadores.arrayLutadores[0] = Lutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.73, 50, 
-	  											new StatusLutador());
-	        
-	        DadosLutadores.arrayLutadores[1] = Lutadores.cadastrarLutador("Mercore", "Brasil", 18, 1.73, 50, 
-												new StatusLutador());
-	        
-	        /*Declarando sem udar importacoes: 
-	        Lutadores.DadosLutadores.arraylutadores[0] = Lutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.73, 50, 'A',
-			  									new Lutadores.StatusLutador(5,1,3));*/
-	         																	
-//	        DadosLutadores.arrayLutadores[0].apresentar(); 
-//	        DadosLutadores.arrayLutadores[0].ganharLuta();
-//	        DadosLutadores.arrayLutadores[0].perderLuta();
-//	        DadosLutadores.arrayLutadores[0].empatarLuta();
-//	        
-//	        DadosLutadores.arrayLutadores[0].status();
-	        Combate c = new Combate (DadosLutadores.arrayLutadores[0], DadosLutadores.arrayLutadores[1]); 
-	        c.marcarLuta();
-	        c.lutar();
+		//Criando um objeto do tipo Dados, onde esta o array que vou guardar as alterções
+		DadosLutadores dadosLutadores = new DadosLutadores(); 
+
+		dadosLutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.89, 80, new Lutadores.StatusLutador(1,3,4));
+		dadosLutadores.cadastrarLutador("Eiton", "Brasil", 49, 1.79, 50, new Lutadores.StatusLutador(1,3,4));
+//		dadosLutadores.arrayLutadores[0].apresentar(); 
+//		dadosLutadores.arrayLutadores[1].apresentar();
+		
+		Combate c = new Combate (dadosLutadores.arrayLutadores[0], dadosLutadores.arrayLutadores[1]); 
+		c.marcarLuta();
+		c.lutar();
 	}
 }
 

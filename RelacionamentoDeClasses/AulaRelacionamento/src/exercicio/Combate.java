@@ -4,7 +4,7 @@ public class Combate {
 	//ATRIBUTOS
 	private Lutadores lutador1;
 	private Lutadores lutador2; 
-	private int rouds; 
+	//private int rouds; 
 	protected boolean statusLuta; 
 
 	public Combate (Lutadores lutador1, Lutadores lutador2) {
@@ -16,7 +16,7 @@ public class Combate {
 	//METODOS DA CLASSE
 	public void marcarLuta () {	
 		//Metodo chamado antes da luta, e é responsavel por validar se a luta vai ocorrer ou não
-		if (lutador1.equals(lutador2) == false) { 
+		if (lutador1.equals(lutador2) == false && lutador1.getCategoria() == lutador2.getCategoria()) { 
 			this.statusLuta = true; 
 		}
 	}

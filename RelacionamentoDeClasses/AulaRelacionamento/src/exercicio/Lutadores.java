@@ -3,53 +3,47 @@ package exercicio;
 //@SuppressWarnings("unused")   ---> Usado para esconder as Warnings
 
 public class Lutadores {
-        static class StatusLutador{
-		     //Classe interna, usada somente dentro de Lutadores
-		     private int vitorias, derrotas, empates;
-		     //METODOS AUXILIARES DA CLASSE INTERNA
-		     public int getVitorias() {
-		             return vitorias;
-		     }
-	
-		     public int getDerrotas() {
-		             return derrotas;
-		     }
-	
-		     public int getEmpates() {
-		             return empates;
-		     }
-		     
-		     public void setVitorias(int vitorias) {
-		             this.vitorias = vitorias;
-		     }
-	
-		     public void setDerrotas(int derrotas) {
-		             this.derrotas = derrotas;
-		     }
-	
-		     public void setEmpates(int empates) {
-		             this.empates = empates;
-		     }
-	
-		     //Contrutor da classe interna StatusLutador 
-		     public StatusLutador (int vitorias, int derrotas, int empates){
-		    	 this.vitorias = vitorias; 
-		    	 this.derrotas = derrotas; 
-		    	 this.empates = empates; 
-	    	 }
-		     //Construtor default
-		     public StatusLutador () { 
-		    	 this.vitorias = 0; 
-		    	 this.derrotas = 0; 
-		    	 this.empates = 0; 
-		     }
+	public static class StatusLutador{
+		//Classe interna, usada somente dentro de Lutadores
+		private int vitorias, derrotas, empates;
+		//METODOS AUXILIARES DA CLASSE INTERNA
+		public int getVitorias() {
+			return vitorias;
+		}
+
+		public int getDerrotas() {
+			return derrotas;
+		}
+
+		public int getEmpates() {
+			return empates;
+		}
+
+		public void setVitorias(int vitorias) {
+			this.vitorias = vitorias;
+		}
+
+		public void setDerrotas(int derrotas) {
+			this.derrotas = derrotas;
+		}
+
+		public void setEmpates(int empates) {
+			this.empates = empates;
+		}
+
+		//Contrutor da classe interna StatusLutador 
+		public StatusLutador (int vitorias, int derrotas, int empates){
+			this.vitorias = vitorias; 
+			this.derrotas = derrotas; 
+			this.empates = empates; 
+		}
+		//Construtor default
+		public StatusLutador () { 
+			this.vitorias = 0; 
+			this.derrotas = 0; 
+			this.empates = 0; 
+		}
          }
-        
-        static class DadosLutadores{ 
-        	//Vetor que armazena os dados de todos os lutadores, eh global...pois precisa ter visibilidade em todas outras classes 
-        	//NÃO É RECOMENDADO, POIS QUEBRA O PARADIMGA DA PRO.ORIENTADA A OBJ
-        	public static Lutadores[] arrayLutadores = new Lutadores[30]; 
-        }
         
         //ATRIBUTOS ----<<<<<<>>>>>>
         private String nome;
@@ -60,13 +54,6 @@ public class Lutadores {
         private StatusLutador statusLutador; 
         
         //METODOS -------<<<<<<<>>>>>
-        public static Lutadores cadastrarLutador (String nome, String nacionalidade, int idade, double altura, 
-		  				   double peso, StatusLutador statusLutador) {
-	     //Criando cadastro do lutador, e retornando pro local de chamamento.....(Retorno vai pro arrayLutadores):
-	     Lutadores dados = new Lutadores (nome, nacionalidade, idade, altura, peso, statusLutador);
-	     return dados; 
-        }
-        
         public void apresentar() {
     		System.out.println("-----APRESENTANDO LUTADORES-----");
     		System.out.printf("NOME: %s\n", this.nome);
