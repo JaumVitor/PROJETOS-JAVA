@@ -5,7 +5,7 @@ public class Combate {
 	private Lutadores lutador1;
 	private Lutadores lutador2; 
 	private int rouds; 
-	private boolean statusLuta; 
+	protected boolean statusLuta; 
 
 	public Combate (Lutadores lutador1, Lutadores lutador2) {
 		this.lutador1 = lutador1; 
@@ -16,25 +16,25 @@ public class Combate {
 	//METODOS DA CLASSE
 	public void marcarLuta () {	
 		//Metodo chamado antes da luta, e é responsavel por validar se a luta vai ocorrer ou não
-		if ( this.lutador1.getCategoria() == this.lutador2.getCategoria()) {
-			System.out.println("Luta liberada!");
+		if (lutador1.equals(lutador2) == false) { 
 			this.statusLuta = true; 
-		}else {
-			System.out.println("Luta não liberada");
-		}
-	}
-	
-	public void teste(Lutadores l1, Lutadores l2) {
-		if (l1.equals(l2) == false) {
-			System.out.println("Lutadores diferentes");
 		}
 	}
 	
 	public void lutar () {
 		if (statusLuta) {
-			System.out.printf("LUTANDO!, %s x %s", this.lutador1.getNome(), this.lutador2.getNome());
+			System.out.println(this);
 		}else {
 			System.out.println("ESTA LUTA NÃO FOI APROVADA!");
 		}
 	}
+	
+	//SOBREESCREVENDO METODOS
+	public String toString () {
+		System.out.println("----------A SERÁ ENTRE OS LUTADORES----------");
+		return String.format("%s VS %s", this.lutador1, this.lutador2);
+	}
 }
+
+
+

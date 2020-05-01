@@ -47,13 +47,14 @@ public class Lutadores {
         
         static class DadosLutadores{ 
         	//Vetor que armazena os dados de todos os lutadores, eh global...pois precisa ter visibilidade em todas outras classes 
+        	//NÃO É RECOMENDADO, POIS QUEBRA O PARADIMGA DA PRO.ORIENTADA A OBJ
         	public static Lutadores[] arrayLutadores = new Lutadores[30]; 
         }
         
         //ATRIBUTOS ----<<<<<<>>>>>>
         private String nome;
         private String nacionalidade; 
-        protected char categoria;
+        private char categoria;
         private int idade; 
         private double altura, peso; 
         private StatusLutador statusLutador; 
@@ -174,4 +175,36 @@ public class Lutadores {
                 this.statusLutador = statusLutador;
         }
         
+        //SOBREESCREVENDO METODOS 	
+        public String toString () {
+        	return String.format("%s [Categoria %s]", this.getNome(), this.getCategoria()); //Imprimindo o nome do lutador, servirá para o toString de combate
+        }
+        
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Lutadores other = (Lutadores) obj;
+			if (Double.doubleToLongBits(altura) != Double.doubleToLongBits(other.altura))
+				return false;
+			if (idade != other.idade)
+				return false;
+			if (nacionalidade == null) {
+				if (other.nacionalidade != null)
+					return false;
+			} else if (!nacionalidade.equals(other.nacionalidade))
+				return false;
+			if (nome == null) {
+				if (other.nome != null)
+					return false;
+			} else if (!nome.equals(other.nome))
+				return false;
+			if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))
+				return false;
+			return true;
+		}
 }

@@ -10,7 +10,7 @@ public class Relacionamento {
 	        DadosLutadores.arrayLutadores[0] = Lutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.73, 50, 
 	  											new StatusLutador());
 	        
-	        DadosLutadores.arrayLutadores[1] = Lutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.73, 50, 
+	        DadosLutadores.arrayLutadores[1] = Lutadores.cadastrarLutador("Mercore", "Brasil", 18, 1.73, 50, 
 												new StatusLutador());
 	        
 	        /*Declarando sem udar importacoes: 
@@ -23,9 +23,9 @@ public class Relacionamento {
 //	        DadosLutadores.arrayLutadores[0].empatarLuta();
 //	        
 //	        DadosLutadores.arrayLutadores[0].status();
-
 	        Combate c = new Combate (DadosLutadores.arrayLutadores[0], DadosLutadores.arrayLutadores[1]); 
-	        c.teste(DadosLutadores.arrayLutadores[0], DadosLutadores.arrayLutadores[1]); 
+	        c.marcarLuta();
+	        c.lutar();
 	}
 }
 
