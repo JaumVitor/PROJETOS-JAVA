@@ -4,7 +4,7 @@ import exercicio.Lutadores.StatusLutador;
 
 public class DadosLutadores {
 	protected Lutadores[] arrayLutadores = new Lutadores[30]; //Vetor que vai armazenar todos os dados dos lutadores
-	protected int cont; 
+	private int cont; 
 	
 	DadosLutadores () {
 		this.cont = 0; 
