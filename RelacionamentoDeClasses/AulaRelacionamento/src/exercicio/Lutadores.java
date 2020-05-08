@@ -3,10 +3,14 @@ package exercicio;
 //@SuppressWarnings("unused")   ---> Usado para esconder as Warnings
 
 public class Lutadores {
-	public static class StatusLutador{
+	protected static class StatusLutador{
 		//Classe interna, usada somente dentro de Lutadores
-		private int vitorias, derrotas, empates;
+		private int vitorias, derrotas, empates, variacao;
+		
 		//METODOS AUXILIARES DA CLASSE INTERNA
+		public int getVariacao() {
+			return variacao;
+		}
 		public int getVitorias() {
 			return vitorias;
 		}
@@ -30,19 +34,26 @@ public class Lutadores {
 		public void setEmpates(int empates) {
 			this.empates = empates;
 		}
-
+		
+		public void setVariacao(int variacao) {
+			this.variacao = variacao;
+		}
+		
 		//Contrutor da classe interna StatusLutador 
 		public StatusLutador (int vitorias, int derrotas, int empates){
 			this.vitorias = vitorias; 
 			this.derrotas = derrotas; 
 			this.empates = empates; 
+			this.variacao = vitorias - derrotas; 
 		}
 		//Construtor default
 		public StatusLutador () { 
 			this.vitorias = 0; 
 			this.derrotas = 0; 
 			this.empates = 0; 
+			this.variacao = 0; 
 		}
+
 	}
 
 	//ATRIBUTOS ----<<<<<<>>>>>>
@@ -52,7 +63,24 @@ public class Lutadores {
 	private int idade; 
 	private double altura, peso; 
 	private StatusLutador statusLutador; 
-
+		//Habilidades (Atributos dos lutadores) : 
+	private int aExp;
+	private int aMob; 
+	private int aFor; 
+	
+	//Contrutor da classe Lutadores
+	public Lutadores (String nome, String nacionalidade, int idade, double altura, double peso, StatusLutador statusLutador ) {
+		this.nome = nome;
+		this.nacionalidade = nacionalidade; 
+		this.idade = idade; 
+		this.altura = altura; 
+		setPeso(peso);
+		this.statusLutador = statusLutador;
+		this.aExp = 1; 
+		this.aMob = 1; 
+		this.aFor = 1; 
+	}
+	
 	//METODOS -------<<<<<<<>>>>>
 	public void apresentar() {
 		System.out.println("-----APRESENTANDO LUTADORES-----");
@@ -83,19 +111,21 @@ public class Lutadores {
 		this.statusLutador.setEmpates(statusLutador.getEmpates() + 1);
 	}
 
-	//Contrutor da classe Lutadores
-	public Lutadores (String nome, String nacionalidade, int idade, double altura, double peso, StatusLutador statusLutador ) {
-		this.nome = nome;
-		this.nacionalidade = nacionalidade; 
-		this.idade = idade; 
-		this.altura = altura; 
-		setPeso(peso);
-		this.statusLutador = statusLutador;
-	}
-
 	//METOS AUXILIARES: 
 	public String getNome() {
 		return nome;
+	}
+
+	public int getaExp() {
+		return aExp;
+	}
+
+	public int getaMob() {
+		return aMob;
+	}
+
+	public int getaFor() {
+		return aFor;
 	}
 
 	public String getNacionalidade() {
@@ -121,6 +151,18 @@ public class Lutadores {
 	public StatusLutador getStatusLutador() {
 		return statusLutador;
 	}
+	
+	public void setaExp(int aExp) {
+		this.aExp = aExp;
+	}
+
+	public void setaMob(int aMob) {
+		this.aMob = aMob;
+	}
+
+	public void setaFor(int aFor) {
+		this.aFor = aFor;
+	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -141,7 +183,7 @@ public class Lutadores {
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
-
+	
 	public void setPeso(double peso) {
 		this.peso = peso; 
 

@@ -7,8 +7,8 @@ public class Relacionamento {
 		//Criando um objeto do tipo Dados, onde esta o array que vou guardar as alterções
 		DadosLutadores dadosLutadores = new DadosLutadores(); 
 
-		dadosLutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.89, 80, new Lutadores.StatusLutador(1,3,4));
-		dadosLutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.89, 80, new Lutadores.StatusLutador(1,5,4));
+		dadosLutadores.cadastrarLutador("Maicon", "Brasil", 18, 1.90, 81, new Lutadores.StatusLutador(1,5,4));
+		dadosLutadores.cadastrarLutador("Liborintona", "Brasil", 18, 1.89, 80, new Lutadores.StatusLutador(1,5,4));
 //		dadosLutadores.arrayLutadores[0].apresentar(); 
 //		dadosLutadores.arrayLutadores[1].apresentar();
 		
