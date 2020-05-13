@@ -206,7 +206,7 @@ public class Lutadores {
 
 	//SOBREESCREVENDO METODOS 	
 	public String toString () {
-		return String.format("%s [Categoria %s]", this.getNome(), this.getCategoria()); //Imprimindo o nome do lutador, servirá para o toString de combate
+		return String.format("Lutador %s | EXP-%s, MOB-%s, FOR-%s", this.getNome(), this.aExp, this.aMob, this.aFor); //Imprimindo o nome do lutador, servirá para o toString de combate
 	}
 
 	@Override
