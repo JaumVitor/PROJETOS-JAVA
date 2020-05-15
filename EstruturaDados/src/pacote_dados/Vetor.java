@@ -29,9 +29,20 @@ public class Vetor {
 		if (this.cont >= this.vetor.length) {
 			throw new Exception ("ERRO, O vetor não é capaz de armazenar valores"); //Disparando uma exception
 		}
+		//Caso tenha espaço no vetor: 
 		vetor[cont] = string; 
 		this.cont++; 
 		System.out.println("Valor adicionado!");
+	}
+	
+	public int getTamanho () {
+		return this.cont; 
+	}
+	
+	public String buscarElemento (int pos) {
+		if (pos > this.cont || pos < 0) {throw new IllegalArgumentException ("Posição invalida");}
+		
+		return vetor[pos]; 
 	}
 	
 	//CONTRUTOR DA CLASSE VETOR
@@ -41,7 +52,11 @@ public class Vetor {
 	}
 	
 	//METODOS SOBRESCRITOS
-	public String toString () {
+	/*public String toString () { 		//IMPRIMINDO VALORES DO ARRAY PELO METODO ARRAY.TOSTRING
+		return Arrays.toString(vetor); 
+	}
+		
+	public String toString () {			//MODO QUE EU IMPLEMENTEI (SEM O STRING BILDER)
 		String imprimir = "[";  //Inicializando a string
 		
 		for (int i=0; i<this.cont; i++) { 
@@ -50,9 +65,33 @@ public class Vetor {
 				imprimir += vetor[i] + ", ";
 				continue; 
 			}
-			imprimir += vetor[i];
+			imprimir += vetor[i]; //Ultimo elemento do vetor
 		}
 		//ao final é so imprimir a string preenchida, como os elementos
 		return imprimir + "]";  
+	}*/
+	
+	public String toString () {
+		StringBuilder s = new StringBuilder(); 
+		s.append("["); 
+		
+		for (int i=0; i<this.cont-1; i++) {
+			s.append(vetor[i]).append(", "); 
+		}
+		
+		if (this.cont > 0) {  //Se cont for maior que 0, pois caso não fosse poderia dar exception
+			s.append(vetor[this.cont-1]);  //Adiconando o ultimo elemento separadamente
+		}
+		
+		String imprimir = s.toString() + "]"; 
+		return imprimir; 
 	}
 }
+
+
+
+
+
+
+
+
