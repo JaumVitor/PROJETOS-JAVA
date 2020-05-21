@@ -1,5 +1,7 @@
 package exercicio;
 
+import java.util.Random;
+
 public class Combate {
 	//ATRIBUTOS
 	private Lutadores lutador1;
@@ -36,6 +38,7 @@ public class Combate {
 				throw new LutaNaoAceita (this.lutador1, this.lutador2); 
 			}else {
 				//Se não for disparada a exception, vai exibir os lutadores
+				System.out.println("\t***LUTA FOI ACEITA!***");
 				analiseAtributos (); //Cada lutador vai ter seus atrbutos aprimorados
 				iniciarCombate (); 
 				//System.err.println(this.toString());
@@ -49,7 +52,7 @@ public class Combate {
 	public void analiseAtributos () {
 
 		//EXPERICIA: (Tem que ser o primeiro caso analisado, pois vai definir quem vai ter vantagem)
-		System.out.println("Analisando os atributos dos lutadores");
+		System.out.println("\t***Analisando os atributos dos lutadores***");
 		if (this.lutador1.getStatusLutador().getVariacao() > this.lutador2.getStatusLutador().getVariacao()) {
 			System.out.println(" * Lutador 1 tem mais experiencia");
 			lutador1.setaExp(lutador1.getaExp() + 1);
@@ -92,9 +95,42 @@ public class Combate {
 			lutador2.setaMob(lutador2.getaMob() + 1);
 		}
 	}
+	public String criarValores (Random random, int tentativa) { //Cria valores aleatórios diferentes, recebendo como parametro a quant
+		StringBuilder valores = new StringBuilder (); 
+		StringBuilder aux = new StringBuilder (); 
+		int cont = 0; 
+		
+		//Se aux não estiver contida em valores, vamos add aux 
+		while (cont < tentativa) {
+			aux.append(random.nextInt(9) + 1); 
+			if (!(valores.toString().contains(aux))) { 
+				valores.append(aux); 
+				cont ++;
+			}
+		}
+		return valores.toString(); //Retorna String com a quantidade de valores sorteados e não repetidos
+	}
+	
+	//Numerador -> Parte de cima da fração, Denominador -> Parte de baixo 
+	public void verificarAtk (int tentativa) {  
+		Random random = new Random (); 
+		
+		StringBuilder valorSorte = new StringBuilder (); 
+		valorSorte.append(random.nextInt(9) + 1); //Sorteando valor entre 1 e 10
+		
+		String valores = criarValores (random, tentativa); //Cria os valores que serão usados para comparar se houve acerto
+		
+		if (valores.contains(valorSorte)) {
+			System.out.println("Acertou ataque!");
+		}else {
+			System.out.println("Não acertou ataque");
+		}
+	}
 	
 	public void iniciarCombate(){
-		
+		//Iniciando chance de acertar o ataque
+		System.out.println("\t***Iniciando combate***".toUpperCase());
+		verificarAtk (5); //Neste caso seria 20% de chance
 	}
 	
 	//SOBREESCREVENDO METODOS

@@ -53,7 +53,6 @@ public class Lutadores {
 			this.empates = 0; 
 			this.variacao = 0; 
 		}
-
 	}
 
 	//ATRIBUTOS ----<<<<<<>>>>>>
@@ -79,6 +78,10 @@ public class Lutadores {
 		this.aExp = 1; 
 		this.aMob = 1; 
 		this.aFor = 1; 
+	}
+	
+	public Lutadores () {
+		
 	}
 	
 	//METODOS -------<<<<<<<>>>>>

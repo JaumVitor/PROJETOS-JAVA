@@ -6,18 +6,19 @@ public class TestesAleatorios {
 	public static void main(String[] args) {
 		Random gerador = new Random(); 
 		
-		String string = "0"; 
-		String valor = ""; 
+		StringBuilder string = new StringBuilder ();
+		StringBuilder valor = new StringBuilder (); 
+		System.out.println(gerador.nextInt(2) + 1);
 		
 		for (int i=0; i<10; i++) {
-			valor += gerador.nextInt(10);  
-			if (string.contains(valor)) {
-				System.out.println("Contem dentro da string");
-			}else {
-				System.out.println("Não contem dentro da string");
-				string += valor; 
-			}
-			valor = "";
+			valor.append(gerador.nextInt(9) + 1);  //Variavel auxiliar
+			//Verificando se este valor ja existe, caso não exista ele adiciona
+			if (!(string.toString().contains(valor) || valor.toString().equals("0"))) {string.append(valor);}
+			
+			valor.delete(0, valor.length());  //Limpando a variavel
 		}
+		
+		System.out.println(string.toString());
+		
 	}
 }
