@@ -24,31 +24,58 @@ public class Vetor {
 		}*/ 
 	}
 
-	public void adicionar(String string) throws Exception {
+	public boolean adicionar(String string) {
 		//adiciona elemento dentro do vetor
-		if (this.cont >= this.vetor.length) {
-			throw new Exception ("ERRO, O vetor não é capaz de armazenar valores"); //Disparando uma exception
-		}
+		if (this.cont >= this.vetor.length) { return false; }
+		
 		//Caso tenha espaço no vetor: 
 		vetor[cont] = string; 
 		this.cont++; 
-		System.out.println("Valor adicionado!");
+		return true;
 	}
 	
-	public int getTamanho () {
-		return this.cont; 
+	//Sobrecarregando metodo adicionar (Add na posicao pedida)
+	public boolean adicionar(String string, int pos) throws Exception{
+		if (this.cont + 1 > vetor.length) {
+			throw new Exception ("Vetor esta cheio, e nao pode add elemento"); 
+		}else if (pos > this.cont || pos < 0 ) {
+			throw new IllegalArgumentException ("Posição invalida, para adicionar elemento");
+		}else {
+			for (int i=this.cont; i>pos; i--) { //Movendo valores para liberar espaço
+				vetor[i] = vetor[i-1]; 
+			}
+			vetor[pos] = string;
+			this.cont++; 
+			return true; 
+		}
 	}
 	
-	public String buscarElemento (int pos) {
-		if (pos > this.cont || pos < 0) {throw new IllegalArgumentException ("Posição invalida");}
-		
-		return vetor[pos]; 
+	public String buscarElemento (int pos) throws IllegalArgumentException{
+		if (pos > this.cont || pos < 0) {
+			throw new IllegalArgumentException ("Posição invalida, para buscar elemento");
+		}
+		return String.format("*Retornano busca por indice - %s", vetor[pos]); 
+	}
+	
+	//Sobrecarregando metodo buscarElemento (Retorna o indice)
+	public int buscarElemento (String palavra) {
+		for (int i=0; i<this.cont; i++) {
+			if (vetor[i].equalsIgnoreCase(palavra)) {
+				System.out.print("Retornando busca por String: ");
+				return i; //Se econtrar a String dentro do vetor vai retornar o indice
+			}
+		}
+		return -1; 
 	}
 	
 	//CONTRUTOR DA CLASSE VETOR
 	public Vetor (int tamanho) { //Recebendo o tamanho do vetor como parmetro
 		this.vetor = new String[tamanho];
 		this.cont = 0;
+	}
+	
+	public int getTamanho () {
+		return this.cont; 
 	}
 	
 	//METODOS SOBRESCRITOS
