@@ -22,7 +22,6 @@ public class Aula03 {
 			e.printStackTrace();
 		}
 		
-		
 		//Buscando elementos pelo indice: 
 		try {
 			System.out.println(v1.buscarElemento(3)); 
