@@ -4,6 +4,20 @@ public class Cachorro extends Mamifero{
         //Atributos: 
         protected String coleira;
         
+        @Override
+        public void todoAnimalHerda() { //Sobreescrevendo metodo herdado (tem a mesma assinatura)
+            System.out.println("* Cachorro herdando metodo");
+        }
+        
+        public void todoAnimalHerda(int num) { // Sobrecarregando metodo herdado (Tem assinaturas diferentes)
+            System.out.printf("*%d Cachorro herdando metodo", num);
+        }
+
+        @Override
+        public void todoAnimalImplementa(){ //Sobreescrevendo implementacao
+            System.out.println("** Cachorro Implementando");   
+        }
+
         //Metodos:
         public void latir () {
 	     System.out.println("Latindo, au au");

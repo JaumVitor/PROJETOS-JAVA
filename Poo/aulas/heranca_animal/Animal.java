@@ -1,6 +1,6 @@
 package heranca_animal;
 
-public class Animal {
+public abstract class Animal {
         private int idade; 
         private String nome; 
 
@@ -12,6 +12,13 @@ public class Animal {
 	     System.out.println("Fazendo barulho");
         }
 
+        public void todoAnimalHerda (){ //para fazer o polimorfismo
+            System.out.println("Todo animal herda");
+        }
+        
+        public abstract void todoAnimalImplementa (); //Criando declaracao do meotdo
+
+        //Metodos modificadores:
         public int getIdade() {
                 return idade;
         }
