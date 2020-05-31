@@ -147,3 +147,4 @@ pom.xml.releaseBackup
 pom.xml.tag
 
 *.gitigore
+.gitignore
