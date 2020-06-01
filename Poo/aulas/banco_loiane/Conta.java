@@ -3,54 +3,45 @@ package banco_loiane;
 public class Conta {
     private int numero;
     private double saldo;
-    private boolean especial;
-    private double limite;
     
-    public Conta(int numero, boolean especial) {
+    //Contrutor da classe: 
+    public Conta(int numero) {
+    	//Cria uma conta com saldo zero
         this.numero = numero;
         this.saldo = 0;
-        setEspecial(especial); // Vai colocar o limite do saldo da conta
     }
-
-    public Conta(int numero, double saldo, boolean especial) {
-        this.numero = numero; 
-        this.setEspecial(especial); // Vai colocar o limite do saldo da conta
+    
+    public Conta(int numero, double saldo) {
+    	//Cria uma conta com valor saldo inicial
+        this.numero = numero;
+        this.saldo = saldo; 
     }
     
     public void extrato () {
     	//Imprime extrato bancario
     }
 
-    public double verSaldo() { // Exibe o saldo da conta
-        return this.saldo;
-    }
-
-    public void depositaSaldo(double saldo) { // Faz o depoisto na conta
-    	if (this.saldo + saldo <= this.limite) {
-    		this.saldo = verSaldo() + saldo; 
-    	}else {
-    		System.err.println("Não foi possivel fazer deposito, LIMITE EXCEDIDO!");
-    	}
+    public boolean depositaSaldo(double saldo) { 
+    	setSaldo(getSaldo() + saldo); 
+    	return true; 
     }
     
-    public void sacarSaldo(double saldo) {
+    public boolean sacarSaldo(double saldo) {
     	if (this.saldo - saldo >= 0) {
-    		this.saldo = verSaldo() - saldo; 
-    	}else {
-    		System.err.println("Não foi possivel fazer saque, SALDO INSUFICIENTE");
+    		this.saldo = getSaldo() - saldo;
+    		return true;
     	}
-    	
+    	return false; 
     }
-
-    private void setEspecial(boolean especial) {
-        if (especial) {this.limite = 1200;} 
-        else {this.limite = 800;} 
+    
+    protected void setSaldo (double saldo) {
+    	this.saldo = saldo; 
     }
-
-    public boolean isEspecial(){
-        return this.especial; 
+    
+    protected double getSaldo () {
+    	return this.saldo; 
     }
-
+    
     public int getNumero() {
         return this.numero;
     }
@@ -59,16 +50,8 @@ public class Conta {
         this.numero = numero;
     }
 
-    public double getLimite() {
-        return this.limite;
-    }
-
-    private void setLimite(double limite) {
-        this.limite = limite;
-    }
-
 	@Override
 	public String toString() {
-		return "[numero=" + numero + ", saldo=" + saldo + ", especial=" + especial + ", limite=" + limite + "]";
+		return "Conta [numero=" + numero + ", saldo=" + saldo + "]";
 	}
 }
