@@ -1,27 +1,31 @@
 package pacote_dados;
-
+/*
+ * Aumentar capacidade do vetor
+ * criar novamente metodo de remocao
+ */
 public class Aula03 {
 	public static void main(String[] args) {
-		Vetor v1 = new Vetor(6); 
+		Vetor v1 = new Vetor(2); 
 
 		//Adicionando elementos: 
 		v1.adicionar("Palavra"); 	//0
 		v1.adicionar("Segunda");   //1
 		v1.adicionar("Add");	  //2
 		v1.adicionar("String");  //3	
+		v1.adicionar("fakjsdlfkjsdf"); 
 		
-		try {
-			v1.adicionar("Valor", 5); //Posicao invalida, pois nao posso add valores em desordem
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-		
-		try {
-			v1.adicionar("Valor1", 2); 
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-		
+//		try {
+//			v1.adicionar("Valor", 5);
+//		}catch (Exception e){
+//			e.printStackTrace();
+//		}
+//		
+//		try {
+//			v1.adicionar("Valor1", 2); 
+//		}catch (Exception e){
+//			e.printStackTrace();
+//		}
+//		
 		//Buscando elementos pelo indice: 
 		try {
 			System.out.println(v1.buscarElemento(3)); 
@@ -41,8 +45,5 @@ public class Aula03 {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		
-		v1.statusElementos();
-
 	}
 }
