@@ -48,21 +48,39 @@ public class Vetor {
 		if (pos > this.cont || pos < 0) {
 			throw new IllegalArgumentException ("Posição invalida, para buscar elemento");
 		}
-		return String.format("*Retornano busca por indice - %s", vetor[pos]); 
+		return vetor[pos]; 
 	}
 	
 	//Sobrecarregando metodo buscarElemento (Retorna o indice)
 	public int buscarElemento (String palavra) {
 		for (int i=0; i<this.cont; i++) {
 			if (vetor[i].equalsIgnoreCase(palavra)) {
-				System.out.print("Retornando busca por String: ");
 				return i; //Se econtrar a String dentro do vetor vai retornar o indice
 			}
 		}
 		return -1; 
 	}
 	
-	//metodo que remove elementos do vetor
+	public boolean remover (String palavra) {
+		int indice = buscarElemento(palavra);
+		if (indice != -1) {
+			for (int i=indice; i<this.cont-1; i++) {
+				vetor[i] = vetor[i+1];
+			} 
+			this.cont--;
+			return true; 
+		}
+		return false; 
+	}
+	
+	public boolean remover (int pos) {
+		if (pos > this.cont || pos < 0 || pos == -1) {
+			return false; 
+		}else {
+			remover (this.vetor[pos]); //Usando o metodo sobrecarregado
+			return true; 
+		}
+	}
 	
 	//CONTRUTOR DA CLASSE VETOR
 	public Vetor (int tamanho) { //Recebendo o tamanho do vetor como parmetro
