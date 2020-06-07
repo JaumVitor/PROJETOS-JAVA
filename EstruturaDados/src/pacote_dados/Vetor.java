@@ -2,7 +2,7 @@ package pacote_dados;
 
 public class Vetor {
 	//ATRIBUTOS
-	private String vetor[]; //Não estou declarando o tamanho do vetor
+	private String vetor[]; //Nï¿½o estou declarando o tamanho do vetor
 	protected int cont;  //variavel de controle do vetor
 	
 	//METODOS AUXILIARES
@@ -21,7 +21,7 @@ public class Vetor {
 		aumentarCapacidade(); 
 		if (this.cont >= this.vetor.length) { return false; } //Funcionaria caso o vetor podesse ficar cheio
 		
-		//Caso tenha espaço no vetor: 
+		//Caso tenha espaï¿½o no vetor: 
 		vetor[cont] = string; 
 		this.cont++; 
 		return true;
@@ -33,9 +33,9 @@ public class Vetor {
 		if (this.cont + 1 > vetor.length) {
 			throw new Exception ("Vetor esta cheio, e nao pode add elemento"); 
 		}else if (pos > this.cont || pos < 0 ) {
-			throw new IllegalArgumentException ("Posição invalida, para adicionar elemento");
+			throw new IllegalArgumentException ("Posiï¿½ï¿½o invalida, para adicionar elemento");
 		}else {
-			for (int i=this.cont; i>pos; i--) { //Movendo valores para liberar espaço
+			for (int i=this.cont; i>pos; i--) { //Movendo valores para liberar espaï¿½o
 				vetor[i] = vetor[i-1]; 
 			}
 			vetor[pos] = string;
@@ -46,7 +46,7 @@ public class Vetor {
 	
 	public String buscarElemento (int pos) throws IllegalArgumentException{
 		if (pos > this.cont || pos < 0) {
-			throw new IllegalArgumentException ("Posição invalida, para buscar elemento");
+			throw new IllegalArgumentException ("Posiï¿½ï¿½o invalida, para buscar elemento");
 		}
 		return vetor[pos]; 
 	}
@@ -108,7 +108,7 @@ public class Vetor {
 			}
 			imprimir += vetor[i]; //Ultimo elemento do vetor
 		}
-		//ao final é so imprimir a string preenchida, como os elementos
+		//ao final ï¿½ so imprimir a string preenchida, como os elementos
 		return imprimir + "]";  
 	}*/
 	
@@ -120,7 +120,7 @@ public class Vetor {
 			s.append(vetor[i]).append(", "); 
 		}
 		
-		if (this.cont > 0) {  //Se cont for maior que 0, pois caso não fosse poderia dar exception
+		if (this.cont > 0) {  //Se cont for maior que 0, pois caso nï¿½o fosse poderia dar exception
 			s.append(vetor[this.cont-1]);  //Adiconando o ultimo elemento separadamente
 		}
 		
