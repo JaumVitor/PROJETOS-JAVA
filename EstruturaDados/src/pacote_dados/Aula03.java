@@ -16,32 +16,29 @@ public class Aula03 {
 		
 		System.out.println(v1.toString());
 
+//		//Buscando elementos pelo indice: 
 //		try {
-//			v1.adicionar("Valor", 5);
+//			System.out.println(v1.buscarElemento(3)); 
 //		}catch (Exception e){
 //			e.printStackTrace();
 //		}
-//		
-//		try {
-//			v1.adicionar("Valor1", 2); 
-//		}catch (Exception e){
+//			
+//		try { 
+//			System.out.println(v1.buscarElemento(1));
+//		}catch (IllegalArgumentException e){
 //			e.printStackTrace();
 //		}
 //		
 
-		//Buscando elementos pelo indice: 
-		try {
-			System.out.println(v1.buscarElemento(3)); 
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-			
-		try { 
-			System.out.println(v1.buscarElemento(1));
-		}catch (IllegalArgumentException e){
-			e.printStackTrace();
+		//Removendo elementos: 
+		if (!v1.remover(0)) {
+			System.out.println("Nï¿½o foi possivel remover");
 		}
 		
+		if (!v1.remover(3)) {
+            System.out.println("Nï¿½o foi possivel remover");
+        }
+
 		if (!v1.remover(5)) {
 			System.out.println("Não foi possivel remover");
 		}
