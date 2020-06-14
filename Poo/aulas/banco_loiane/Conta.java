@@ -18,11 +18,7 @@ public class Conta {
         this.saldo = saldo; 
     }
     
-    public void buscarConta (int numConta) {
-    	//<> Busca a conta pelo numero dela
-    }
-    
-    public void extrato (double extrato, String locale) {
+    private void extrato (double extrato, String locale) {
     	//<> Armazena o extrato bancario da conta
     	if (locale.equalsIgnoreCase("saque")) {
     		this.registro.append("SACOU ----- R$" + extrato + "\n");
@@ -32,17 +28,17 @@ public class Conta {
     }
     
     public String extrato () { //Retorna o extrato bancario da conta
-    	return String.format(this.registro.toString() + "Saldo atual: R$%s", this.saldo);
+    	System.out.printf("-----[Extrato C%s]-----\n", this.numero);
+    	return String.format(this.registro.toString() + "*Saldo atual: R$%s", this.saldo + "\n");
     }
 
-    public boolean depositaSaldo(double saldo) { 
+    protected void depositaSaldo(double saldo) { 
     	//<> Passando os registros, para colocar no extrato
     	setSaldo(getSaldo() + saldo); 
-    	extrato(saldo, "deposito"); 
-    	return true; 
+    	extrato(saldo, "deposito"); //Passando os registros, para adicionar no extrato
     }
-    
-    public boolean sacarSaldo(double saldo) {
+
+    protected boolean sacarSaldo(double saldo) {
     	if (this.saldo - saldo >= 0) {
     		this.saldo = getSaldo() - saldo;
     		extrato(saldo, "saque"); //Passando os registros, para colocar no extrato
@@ -51,11 +47,11 @@ public class Conta {
     	return false; 
     }
     
-    protected void setSaldo (double saldo) {
+    private void setSaldo (double saldo) {
     	this.saldo = saldo; 
     }
     
-    protected double getSaldo () {
+    private double getSaldo () {
     	return this.saldo; 
     }
     
@@ -63,7 +59,7 @@ public class Conta {
         return this.numero;
     }
 
-    public void setNumero(int numero) {
+    private void setNumero(int numero) {
         this.numero = numero;
     }
 
