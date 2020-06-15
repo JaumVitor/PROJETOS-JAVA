@@ -18,7 +18,7 @@ public class Conta {
         this.saldo = saldo; 
     }
     
-    private void extrato (double extrato, String locale) {
+    protected void extrato (double extrato, String locale) {
     	//<> Armazena o extrato bancario da conta
     	if (locale.equalsIgnoreCase("saque")) {
     		this.registro.append("SACOU ----- R$" + extrato + "\n");
@@ -47,11 +47,11 @@ public class Conta {
     	return false; 
     }
     
-    private void setSaldo (double saldo) {
+    protected void setSaldo (double saldo) {
     	this.saldo = saldo; 
     }
     
-    private double getSaldo () {
+    protected double getSaldo () {
     	return this.saldo; 
     }
     
