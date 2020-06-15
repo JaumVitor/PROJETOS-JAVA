@@ -5,13 +5,14 @@ public class ContaEspecial extends Conta{
 	
     public ContaEspecial(int numero) {
 		super(numero);
+		this.limite = 500; 
 	}
 
     @Override
-	protected boolean sacarSaldo(double saldo) {
-    	if ((this.getSaldo() + limite) - saldo >= 0) {
-    		this.setSaldo(getSaldo() - saldo);
-    		extrato(saldo, "saque"); //Passando os registros, para colocar no extrato
+	protected boolean sacarSaldo(double valor) {
+    	if ((this.getSaldo() + limite) - valor >= 0) {
+    		this.setSaldo(getSaldo() - valor);
+    		extrato(valor, "saque"); //Passando os registros, para colocar no extrato
     		return true;
     	}
     	return false;  

@@ -21,9 +21,11 @@ public class Conta {
     protected void extrato (double extrato, String locale) {
     	//<> Armazena o extrato bancario da conta
     	if (locale.equalsIgnoreCase("saque")) {
-    		this.registro.append("SACOU ----- R$" + extrato + "\n");
+    		this.registro.append("SACOU .......... R$" + extrato + "\n");
     	}else if (locale.equalsIgnoreCase("deposito")) {
-    		this.registro.append("DEPOSITOU - R$" + extrato + "\n"); 
+    		this.registro.append("DEPOSITOU ...... R$" + extrato + "\n"); 
+    	}else if (locale.equalsIgnoreCase("rendimento")) {
+    		this.registro.append("AJUSTE ........ +R$" + extrato + "\n"); 
     	}
     }
     
