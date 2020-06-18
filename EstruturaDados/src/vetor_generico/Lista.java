@@ -12,6 +12,10 @@ public class Lista <Tipo> {
 	}
 
 	//METODOS AUXILIARES
+	public void clear () {
+		this.vetor = (Tipo[]) new Object[this.vetor.length]; 
+	}
+	
 	private void aumentarCapacidade() {
 		if (this.cont == this.vetor.length) {
 			Tipo vetorAux[] = (Tipo[]) new Object[vetor.length * 2]; //Criando um vetor com o dobro do tamanho

@@ -7,5 +7,9 @@ public class Teste {
 	
 		vetor.adicionar(c); 
 		System.out.println(vetor.toString());
+		
+		System.out.println("Apagando elementos");
+		vetor.clear();
+		System.out.println(vetor);
 	}
 }
