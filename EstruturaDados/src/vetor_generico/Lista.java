@@ -2,7 +2,7 @@ package vetor_generico;
 
 public class Lista <Tipo> {
 	//ATRIBUTOS
-	private Tipo vetor[]; //Não estou declarando o tamanho do vetor
+	protected Tipo vetor[]; //Não estou declarando o tamanho do vetor
 	protected int cont;  //variavel de controle do vetor
 
 	//CONTRUTOR DA CLASSE VETOR
@@ -10,13 +10,18 @@ public class Lista <Tipo> {
 		this.vetor = (Tipo[]) new Object[tamanho];
 		this.cont = 0;
 	}
+	
+	public Lista () {
+		this.vetor = (Tipo[]) new Object[10]; 
+		this.cont = 0; 
+	}
 
 	//METODOS AUXILIARES
 	public void clear () {
 		this.vetor = (Tipo[]) new Object[this.vetor.length]; 
 	}
 	
-	private void aumentarCapacidade() {
+	protected void aumentarCapacidade() {
 		if (this.cont == this.vetor.length) {
 			Tipo vetorAux[] = (Tipo[]) new Object[vetor.length * 2]; //Criando um vetor com o dobro do tamanho
 			for (int i=0; i<this.vetor.length; i++) {
@@ -73,7 +78,7 @@ public class Lista <Tipo> {
 
 	public boolean remover (Tipo palavra) {
 		int indice = buscarElemento(palavra);
-		if (indice != -1) {
+		if (indice > -1) {
 			for (int i=indice; i<this.cont-1; i++) {
 				vetor[i] = vetor[i+1];
 			} 
@@ -94,6 +99,13 @@ public class Lista <Tipo> {
 
 	public int getTamanho () {
 		return this.cont; 
+	}
+	
+	public boolean isEmpty() {
+		if (this.cont > 0) {
+			return false; 
+		}
+		return true; 
 	}
 
 	//METODOS SOBRESCRITOS
