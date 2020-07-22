@@ -148,3 +148,4 @@ pom.xml.tag
 
 *.gitigore
 .gitignore
+.class
