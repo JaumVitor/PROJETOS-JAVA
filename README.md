@@ -1,3 +1,3 @@
 # PROJETOS-JAVA
-> Repositório que armazena exercicios cujo foram feitos em casa e sala de aula
+> Repositório que armazena exercicios de estudo individual (Que não foram feitos em sala de aula)
 
